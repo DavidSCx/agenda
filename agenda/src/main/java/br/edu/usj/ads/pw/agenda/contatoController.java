@@ -20,6 +20,8 @@ public ModelAndView getcadastro(){
     ModelAndView modelAndView = new ModelAndView("cadastro");
     return modelAndView;
 }
+
+
 @PostMapping(value = "/adicionar")
 public ModelAndView postAdicionar(@RequestParam String nome, @RequestParam String tipo, @RequestParam String telefone){
 
@@ -31,12 +33,12 @@ public ModelAndView postAdicionar(@RequestParam String nome, @RequestParam Strin
 
     contatoRepository.save(contato);
 
+    ModelAndView modelAndView = new ModelAndView("detalhes");
+
+    modelAndView.addObject("contato", contato);
 
 
-
-
-
-return null;
+return modelAndView;
 
 
 }
