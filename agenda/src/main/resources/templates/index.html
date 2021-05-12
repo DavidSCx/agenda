@@ -12,7 +12,7 @@
     <h1>Agenda</h1>
 
     <ul>
-            <li>Nome - tipo - Telefone</li>
+            <li th:each="contato: ${lista}" th:text="${contato.nome}">Nome - tipo - Telefone</li>
 
     </ul>
 
